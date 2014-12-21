@@ -8,15 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book")
+@Table(name = "user")
 public class User {
-	private long id;
-	private String name;
-	private String age;
-	private String password;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column(length = 20)
+	private String name;
+
+	@Column(length = 15)
+	private String age;
+	
+	@Column(length = 20)
+	private String password;
+	
+	@Column(name = "picture",length = 16777215)
+	private byte[] picture;
+	
+	
+	public byte[] getPicture() {
+		return picture;
+	}
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
+	}
 	public long getId() {
 		return id;
 	}
@@ -24,7 +41,7 @@ public class User {
 		this.id = id;
 	}
 	
-	@Column(length = 20)
+	
 	public String getName() {
 		return name;
 	}
@@ -32,14 +49,14 @@ public class User {
 		this.name = name;
 	}
 	
-	@Column(length = 15)
+	
 	public String getAge() {
 		return age;
 	}
 	public void setAge(String age) {
 		this.age = age;
 	}
-	@Column(length = 20)
+	
 	public String getPassword() {
 		return password;
 	}
