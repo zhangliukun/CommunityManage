@@ -18,6 +18,7 @@
 	<!-- 静态资源访问 -->
 	<mvc:resources location="classpath:/js/" mapping="/js/**"/>  
 	<mvc:resources location="classpath:/css/" mapping="/css/**"/> 
+	<mvc:resources location="classpath:/image/" mapping="/image/**"/> 
 	<!-- 视图解释类 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
