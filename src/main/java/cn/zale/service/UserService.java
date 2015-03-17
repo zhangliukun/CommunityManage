@@ -1,5 +1,7 @@
 package cn.zale.service;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +39,11 @@ public class UserService {
 	public void deleteUser(long id)
 	{
 		userDao.deleteUser(id);
+	}
+	
+	@Transactional
+	public void saveImage(String id,InputStream f)
+	{
+		userDao.saveImage(id,f);
 	}
 }
